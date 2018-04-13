@@ -1,0 +1,9 @@
+<div>
+  <h3>
+    all philly show users
+  </h3>
+</div>
+
+<% @users.each do |user| %>
+  <p> <%= link_to(user.username, user_path(@user)) %> </p>
+<% end %>

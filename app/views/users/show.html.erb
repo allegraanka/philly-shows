@@ -1,0 +1,7 @@
+<div>
+  <h3>
+    <%= @user.username %>
+  </h3>
+</div>
+
+<p> <%= link_to("Delete Account", user_path(@user), method: :delete) %> </p>
