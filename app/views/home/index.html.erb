@@ -1,9 +1,13 @@
+
 <div>
   <p>
-    phlux: your calendar + community group text for philly shows.
+    your place for philly shows
   </p>
 </div>
 
-<div> <%= link_to("get started", new_user_path, method: :get) %> </div>
-
-<div> <%= link_to("login", login_path, method: :get) %> </div>
+<nav>
+  <ul class="index_buttons">
+    <li> <div> <%= link_to("get started", new_user_path, method: :get) %> </div> </li>
+    <li> <div> <%= link_to("log in", login_path, method: :get) %> </div> </li>
+  </ul>
+</nav>

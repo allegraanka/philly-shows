@@ -1,9 +1,11 @@
+<div> <%= link_to("<< back to dashboard", dashboard_path, :class => 'back-link') %> </div>
+
 <div>
-  <h3>
-    all philly show users
-  </h3>
+  <h1>
+    phlux users
+  </h1>
 </div>
 
 <% @users.each do |user| %>
-  <p> <%= link_to(user.username, user_path(@user)) %> </p>
+  <p> <%= link_to(user.username, user_path(user), method: :get) %> </p>
 <% end %>

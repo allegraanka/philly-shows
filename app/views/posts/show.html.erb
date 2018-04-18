@@ -1,1 +1,10 @@
-<h1>show one post</h1>
+<div> <%= link_to("<< back to profile", user_path(@user), :class => 'back-link') %> </div>
+
+<div class="single_post_container">
+  <div class="single_post">
+    <span class="username_display"> <%= @post.user.username %>: </span>
+    <p>
+      <%= @post.message %>
+    </p>
+  </div>
+</div>

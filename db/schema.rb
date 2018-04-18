@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_11_170119) do
+ActiveRecord::Schema.define(version: 2018_04_18_151026) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "comment"
+    t.integer "post_id"
+    t.integer "user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
-    t.string "message"
+    t.string "message", limit: 150
     t.string "author"
-    t.string "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,7 +31,7 @@ ActiveRecord::Schema.define(version: 2018_04_11_170119) do
     t.string "lname"
     t.string "username"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -4,29 +4,28 @@
     <title>PhluxShows</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Roboto" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <h1>phlux</h1>
+    <h1 class="logo animated flip"> <a href="/">phlux</a> </h1>
 
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/">home</a></li>
-          <li><a href="/about">about</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="yield-div">
+      <%= yield %>
+      <% debug(params) if Rails.env.development? %>
+    </div>
 
-    <% if @current_user != nil %>
-      <div> hi, <%= @current_user.username %> ! </div>
-      <%= link_to "log out", logout_path, method: :delete %>
-    <% end %>
-
-    <%= yield %>
+    <div class="footer">
+      <ul>
+        <li> &copy 2018 <strong>phlux</strong> | </li>
+        <li> <%= link_to("about", about_path, method: :get) %> </li>
+        <li> <%= link_to("terms", about_path, method: :get) %> </li>
+        <li> <%= link_to("privacy", about_path, method: :get) %> </li>
+      </ul>
+    </div>
 
   </body>
 </html>

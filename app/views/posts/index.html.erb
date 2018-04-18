@@ -1,0 +1,9 @@
+<div> <%= link_to("<< back to dashboard", dashboard_path, :class => 'back-link') %> </div>
+
+<div>
+  <ul class="post_index_display">
+    <% @posts.each do |post| %>
+      <li> <span class="username_display"> <%= post.user.username %>: </span> <%= post.message %> </li>
+    <% end %>
+  </ul>
+</div>
