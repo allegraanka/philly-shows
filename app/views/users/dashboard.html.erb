@@ -1,0 +1,57 @@
+
+  <div class="dash_nav">
+    <ul>
+      <li>
+        <%= link_to("see who's on phlux", users_path, method: :get) %>
+      </li>
+      <li>
+        <%= link_to("my profile", user_path(@user), method: :get) %>
+      </li>
+      <li>
+        <%= link_to("manage account", manage_path(@user), method: :get) %>
+      </li>
+      <li>
+        <%= link_to("thread", posts_path, method: :get) %>
+      </li>
+    </ul>
+    <div class="header_items">
+        <%= form_tag("/search", method:"get") do %>
+          <%= label_tag(:query, "search phlux:") %>
+          <%= text_field_tag(:query) %>
+          <%= submit_tag("search") %>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="welcome">
+    <%= user_welcome %>
+  </div>
+
+  <h3> what's happening? </h3>
+  <div>
+    <%= form_for @post do |f| %>
+        <div>
+          <%= f.text_field :message, placeholder: "post to phlux" %>
+        </div>
+        <div>
+          <%= f.submit "post" %>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="scroll">
+  <ul class="post_index_display">
+    <% @posts.each do |post| %>
+      <li>
+        <div class="chatbox_posts">
+          <span class="username_display"> <%= post.user.username %>: </span> <%= post.message %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<h3> <%= link_to("log out", logout_path, method: :delete) %> </h3>
+
+<div class="user_since"> <%= user_since %> </div>

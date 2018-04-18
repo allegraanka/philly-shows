@@ -78,6 +78,7 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
+    geo_ip (0.7.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.0)
@@ -205,6 +206,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  geo_ip (~> 0.7.0)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pry-rails

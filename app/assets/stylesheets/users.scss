@@ -1,3 +1,41 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// all the styles related to the users controller here
+
+.user_greeting li {
+  list-style-type: none;
+}
+
+.welcome {
+  margin: 2%;
+}
+
+.scroll {
+  overflow-y: scroll;
+  height: 250px;
+  width: 425px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 40px auto;
+  background-color: #e0daed;
+}
+
+.chatbox_posts {
+  padding: 10px;
+  margin: 5px;
+}
+
+.manage_account {
+}
+
+.manage_account ul li {
+  list-style-type: none;
+}
+
+.new_post {
+  margin-bottom: 15px;
+}
+
+.profile_posts {
+  border: 1px solid black;
+  padding: 15px;
+  margin: 5px;
+}

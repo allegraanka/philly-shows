@@ -1,7 +1,19 @@
-<div>
-  <h3>
-    <%= @user.username %>
-  </h3>
-</div>
+<div> <%= link_to("<< back to dashboard", dashboard_path, :class => 'back-link') %> </div>
+<div> <%= link_to("<< back to users", users_path, method: :get) %> </div>
 
-<p> <%= link_to("Delete Account", user_path(@user), method: :delete) %> </p>
+<h1> <%= user_profile %> </h1>
+
+<div>
+  <ul class="post_index_display post_profile_display">
+    <li> <span class="username_display"> <%= @user.username %></span>'s posts</li>
+    <% @posts.each do |post| %>
+      <li>
+        <a href="/posts/<%= post.id %>">
+          <div class="profile_posts">
+           <%= post.message %>
+          </div>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Ruby gem provides a simple wrapper for safely handling (hashing) passwords
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+gem 'geo_ip', '~> 0.7.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

@@ -1,3 +1,21 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// all the styles related to the posts controller here
+
+.post_index_display {
+  display: inline;
+  list-style-type: none;
+}
+
+.username_display {
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+.single_post_container {
+  margin: 50px auto;
+}
+
+.single_post {
+  border: 1px solid black;
+  padding: 15px;
+  margin: 5px;
+}
