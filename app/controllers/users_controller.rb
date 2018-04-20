@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @post = Post.new
     @posts = @user.posts.all.order("created_at DESC")
+    @comment = Comment.new
   end
 
   def dashboard

@@ -13,6 +13,14 @@
            <%= post.message %>
           </div>
         </a>
+        <div>
+          <%= form_for @comment do |f| %>
+              <div>
+                <%= f.text_field :comment, placeholder: "comment" %>
+                <%= f.submit "post" %>
+              </div>
+          <% end %>
+        </div>
       </li>
     <% end %>
   </ul>
