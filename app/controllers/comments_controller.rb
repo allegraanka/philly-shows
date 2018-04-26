@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comment = Comment.all.order("created_at DESC")
+    @comments = Comment.all.order("created_at DESC")
   end
 
   def show
@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:comment)
+    params.require(:comment).permit(:comment, :post_id)
   end
 
 end

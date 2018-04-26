@@ -4,8 +4,10 @@ module CommentsHelper
     @comment = Comment.new(comment_params)
     @comment.user_id = session[:user_id]
     if @comment.save
-      redirect_to dashboard_path(User.find(session[:user_id]))
+      redirect_to posts_path
     else
+      p 'ERRORS:'
+      p @comment.errors.full_messages
       render 'index'
     end
   end
