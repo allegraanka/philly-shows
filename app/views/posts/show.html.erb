@@ -1,10 +1,18 @@
 <div> <%= link_to("<< back to profile", user_path(@user), :class => 'back-link') %> </div>
 
+<h1> post thread </h1>
 <div class="single_post_container">
   <div class="single_post">
-    <span class="username_display"> <%= @post.user.username %>: </span>
+    <span class="username_display"> <%= @user.username %>: </span>
     <p>
       <%= @post.message %>
     </p>
   </div>
+</div>
+
+<div>
+  <h1> comments </h1>
+    <% @comments.each do |comment| %>
+      <div> <%= comment.user.username %>: <%= comment.comment %> </div>
+    <% end %>
 </div>
