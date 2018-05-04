@@ -43,12 +43,10 @@ class UsersController < ApplicationController
 
   def destroy
     delete_user
-    redirect_to users_goodbye_path
+    redirect_to goodbye_path
   end
 
   def goodbye
-    delete_user
-    redirect_to users_goodbye_path
   end
 
   # private methods

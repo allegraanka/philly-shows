@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/about' => 'home#about'
 
 # user sign up / delete account routes
-  get '/users/goodbye' => 'users#goodbye'
+  get '/goodbye' => 'users#goodbye'
 
 # user login / logout routes
   get '/login' => 'sessions#new'
