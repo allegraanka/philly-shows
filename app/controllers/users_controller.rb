@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     puts params.inspect
     @user = User.create(user_params)
       if @user.save
+        log_in(@user)
         redirect_to dashboard_path @user
       else
         render 'new'
@@ -36,12 +37,16 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
-  def update
+  def edit
+    @user = User.find(session[:user_id])
   end
 
   def destroy
     delete_user
-    redirect_to users_goodbye_path
+    redirect_to goodbye_path
+  end
+
+  def goodbye
   end
 
   # private methods
