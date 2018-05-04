@@ -41,6 +41,12 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  def update
+    user = User.find(session[:user_id])
+    user.update(user_params)
+    redirect_to user_path
+  end
+
   def destroy
     delete_user
     redirect_to goodbye_path
